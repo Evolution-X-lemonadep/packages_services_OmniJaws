@@ -83,6 +83,14 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+                android:name="org.thosp.yourlocalweather.model.YourLocalWeatherReceiver"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="org.thosp.yourlocalweather.action.WEATHER_UPDATE" />
+            </intent-filter>
+        </receiver>
+
         <!-- name is used a prefix +"_" for images e.g. weather_<condition_id>
              weather_foo_<condition_id> -->
         <activity

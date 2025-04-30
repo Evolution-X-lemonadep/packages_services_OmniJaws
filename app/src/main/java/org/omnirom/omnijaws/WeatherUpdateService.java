@@ -250,6 +250,11 @@ public class WeatherUpdateService extends JobService {
                 WeatherInfo w = null;
                 try {
                     AbstractWeatherProvider provider = Config.getProvider(WeatherUpdateService.this);
+
+                    if ((provider != null) && (provider instanceof YourLocalWeatherProvider)) {
+                        return;
+                    }
+
                     int i = 0;
                     // retry max 3 times
                     while (i < RETRY_MAX_NUM) {
